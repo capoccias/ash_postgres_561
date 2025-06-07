@@ -26,7 +26,7 @@ defmodule AshPostgres561.Ledgers.InternalAccount.Validations.BalanceIsSufficient
 
   @impl true
   def atomic(_changeset, _opts, _context) do
-    {:atomic, [:balance], expr(^atomic_ref(:balance) + type(^arg(:amount), :decimal) < 0),
+    {:atomic, [:balance], expr(^atomic_ref(:balance) + ^arg(:amount) < 0),
      expr(
        error(^InvalidChanges, %{
          fields: [:balance],

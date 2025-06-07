@@ -27,7 +27,7 @@ defmodule AshPostgres561.Ledgers.InternalAccount do
       validate {InternalAccount.Validations.BalanceIsSufficient, []},
         where: [compare(:amount, less_than: 0)]
 
-      change atomic_update(:balance, expr(balance + type(^arg(:amount), :decimal)))
+      change atomic_update(:balance, expr(balance + ^arg(:amount)))
     end
   end
 

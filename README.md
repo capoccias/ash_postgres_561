@@ -27,7 +27,7 @@ internal_account |> Ash.Changeset.for_update(:update_balance, %{amount: Decimal.
 
 ## Additional info
 
-I was getting an error that was fixed by adding the `protocols.ex` file per some llm help:
+I was getting an error that was fixed by adding the `protocols.ex` file per some llm help, it may not be relevant but figured worth mentioning:
 
 ```
 ** (Ash.Error.Unknown)
